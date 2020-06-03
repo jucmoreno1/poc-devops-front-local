@@ -11,11 +11,11 @@ pipeline {
         stage('Preparar Entorno') {
             agent any
             steps {
-                echo '***** Se agrega el archivo de configuración  *****'
+                echo '** Se agrega el archivo de configuración   **'
                 //sh 'cp /home/mauricio/wrkspc-cloud/front-caja/galileo/.env .'
             }
         }
-        stage('**** Construcción Proyecto ****') {
+        stage('**  Construcción Proyecto  **') {
             agent {
                 docker {
                     //Virtualmente Jenkins crea un agente de npm para compilar 
@@ -25,12 +25,12 @@ pipeline {
             }
             environment {HOME = '.'}
             steps {
-                echo '*****  Inicia construcción del proyecto... *****'
+                echo '**  Inicia construcción del proyecto... **'
                 sh 'npm install'
                 sh 'npm run build'
             }
         }
-        stage('****  Construcción Imagen *****') {
+        stage('** Construcción Imagen **') {
             agent any
             steps {
                 echo 'Armando la imagen Docker para subir a Google Cloud Platform'
@@ -44,13 +44,13 @@ pipeline {
                 sh "docker push gcr.io/${projectGCP}/${applicationName}:${versionImage}${env.BUILD_NUMBER}"
             }
         }
-        stage('****  Pruebas ****') {
+        stage('** Pruebas **') {
             agent any
             steps {
                 echo 'Se lanzan las pruebas unitarias...'
             }
         }
-        stage('*****  Desplegado en la nube *****') {
+        stage('***  Desplegado en GCP **') {
             agent any
             steps {
                 echo 'Comienza desplegado en desarrollo...'

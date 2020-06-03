@@ -35,24 +35,18 @@ function App() {
   const obj = JSON.stringify({nombre, fechaNacimiento})
   console.log(obj) 
 
-  const endpointCalcularEdad = URL + ':' + PORT + CALCULAEDAD
-  const endpointApiV1 = URL + ':' + PORT + APIV1
-  const endpointApiV2 = URL + ':' + PORT + APIV2
-
-  console.log({endpointApiV1})
-
 
   const handlePost = (event) => {
     console.log(event.target);
     event.preventDefault();
-           http://pocdevops-bk-local-cloudendpoint-api.endpoints.gcpcert-272801.cloud.goog/api/calcularEdad?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0
-    fetch('http://pocdevops-bk-local-cloudendpoint-api.endpoints.gcpcert-272801.cloud.goog/api/calcularEdad?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0', {
-      method: 'POST',
-      body: obj,
+    const url = "http://pocdevops-bk-local-cloudendpoint-api.endpoints.gcpcert-272801.cloud.goog/api/calcularEdad?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0";
+    fetch(url, {
+      method: "POST",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
+      body: obj,
     })
       .then((response) => {
         return response.json();
@@ -61,8 +55,6 @@ function App() {
         setEdad(data.edad);
       });
   };
-
-
 
   const handleChange = (event) => {
     if (event.target.name === 'nombre') {
