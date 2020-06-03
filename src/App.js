@@ -47,7 +47,7 @@ function App() {
     event.preventDefault();
     //'http://pocdevops-bk-local-cloudendpoint-api.endpoints.gcpcert-272801.cloud.goog/api/calcularEdad?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0'
 
-    fetch('http://104.196.130.222:8080/api/calcularEdad', {
+    fetch('http://34.69.148.154:8080/api/calcularEdad?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0', {
       method: 'POST',
       body: obj,
       headers: {
@@ -109,7 +109,7 @@ function App() {
           <a
             className='App-link'
             onClick={() => {
-              handleGetApi('http://104.196.130.222:8080/api/v1');
+              handleGetApi('http://34.69.148.154:8080/api/v1?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0');
             }}
             rel='noopener noreferrer'
           >
@@ -120,7 +120,7 @@ function App() {
           <a
             className='App-link'
             onClick={() => {
-              handleGetApi('http://104.196.130.222:8080/api/v2');
+              handleGetApi('http://34.69.148.154:8080/api/v2?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0');
             }}
             rel='noopener noreferrer'
           >
