@@ -45,9 +45,8 @@ function App() {
   const handlePost = (event) => {
     console.log(event.target);
     event.preventDefault();
-    //'http://pocdevops-bk-local-cloudendpoint-api.endpoints.gcpcert-272801.cloud.goog/api/calcularEdad?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0'
-
-    fetch('http://34.69.148.154:8080/api/calcularEdad?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0', {
+  
+    fetch('http://pocdevops-bk-local-cloudendpoint-api.endpoints.gcpcert-272801.cloud.goog/api/calcularEdad?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0', {
       method: 'POST',
       body: obj,
       headers: {
@@ -109,7 +108,7 @@ function App() {
           <a
             className='App-link'
             onClick={() => {
-              handleGetApi('http://34.69.148.154:8080/api/v1?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0');
+              handleGetApi('http://pocdevops-bk-local-cloudendpoint-api.endpoints.gcpcert-272801.cloud.goog/api/v1?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0');
             }}
             rel='noopener noreferrer'
           >
@@ -120,7 +119,7 @@ function App() {
           <a
             className='App-link'
             onClick={() => {
-              handleGetApi('http://34.69.148.154:8080/api/v2?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0');
+              handleGetApi('http://pocdevops-bk-local-cloudendpoint-api.endpoints.gcpcert-272801.cloud.goog/api/v2?key=AIzaSyAlNvPY20t6WAOOdpA2ZqlhJB2JNQ0aZD0');
             }}
             rel='noopener noreferrer'
           >
