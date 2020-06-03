@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: poc-devops-front-local
+# namespace: poc-devops
+  labels:
+    app: poc-devops-front-local
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        apps: poc-devops-front-local-service
+    spec:
+      containers:
+      - name: poc-devops-front-local-service
+        image: gcr.io/gcpcert-272801/poc-devops-front-local:1.0.2
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: gcr-json-key
+
